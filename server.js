@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const port = 7010;
+const port = 4444;
 
 mongoose
   .connect(
@@ -136,7 +136,7 @@ app.post("/login", async (req, res) => {
         jwt.sign(
           payload,
           "jwtPassword",
-          { expiresIn: 360000000 },
+          { expiresIn: '1hr' },
           (err, token) => {
             if (err) throw err;
             return res.json({ token, empType });
@@ -157,7 +157,7 @@ app.post("/login", async (req, res) => {
         jwt.sign(
           payload,
           "jwtPassword",
-          { expiresIn: 360000000 },
+          { expiresIn: '1hr' },
           (err, token) => {
             if (err) throw err;
             return res.json({ token, empType });
@@ -179,7 +179,7 @@ app.post("/login", async (req, res) => {
         jwt.sign(
           payload,
           "jwtPassword",
-          { expiresIn: 360000000 },
+          { expiresIn: '1hr' },
           (err, token) => {
             if (err) throw err;
             return res.json({ token, empType });
